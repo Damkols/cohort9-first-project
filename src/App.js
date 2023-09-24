@@ -8,9 +8,23 @@ const App = () => {
  return (
   <div className="App">
    <TodoProvider>
-    <div className="todo-wrapper">
-     <TodoInput />
-     <TodoList />
+    <div className="kanban-board">
+     <div className="kanban-column">
+      <h2>All Todos</h2>
+      <TodoList status="all" />
+     </div>
+     <div className="kanban-column">
+      <h2>Completed Todos</h2>
+      <TodoList status="completed" />
+     </div>
+     <div className="kanban-column">
+      <h2>Ongoing Todos</h2>
+      <TodoList status="ongoing" />
+     </div>
+     <div className="kanban-column">
+      <h2>Add New Todo</h2>
+      <TodoInput />
+     </div>
     </div>
    </TodoProvider>
   </div>

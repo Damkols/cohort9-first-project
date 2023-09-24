@@ -31,9 +31,13 @@ export const TodoProvider = ({ children }) => {
    title: inputText,
    completed: false,
   };
-  setTodos([...todos, newTodo]);
+  if (newTodo.title !== "") {
+   console.log(newTodo.title);
+   setTodos([...todos, newTodo]);
+  }
   setInputText("");
   console.log(todos);
+  console.log(todos[0].title);
  };
 
  const handleInputChange = (e) => {
@@ -54,9 +58,9 @@ export const TodoProvider = ({ children }) => {
 
  const handleEdit = (id, title) => {
   const newTodos = todos.map((todo) =>
-   todo.id === id ? { ...todo, title } : todo
+   todo.id === id ? { ...todo, title, completed: false } : todo
   );
-  setTodos(newTodos);
+  title !== "" && setTodos(newTodos);
  };
 
  return (

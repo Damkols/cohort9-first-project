@@ -11,6 +11,7 @@ const UpdateTodo = ({ todo }) => {
     type="checkbox"
     checked={todo.completed}
     onChange={() => handleCheck(todo.id)}
+    disabled={editId}
    />
    {editId === todo.id ? (
     <input
@@ -19,7 +20,10 @@ const UpdateTodo = ({ todo }) => {
      onChange={(e) => handleEdit(todo.id, e.target.value)}
     />
    ) : (
-    <span className={`todo-title ${todo.completed && "checked"}`}>
+    <span
+     className={`todo-title ${todo.completed ? "checked" : "unchecked"} 
+     `}
+    >
      {todo.title}
     </span>
    )}
@@ -29,7 +33,7 @@ const UpdateTodo = ({ todo }) => {
     <button
      className="del-button"
      onClick={() => setEditId(todo.id)}
-     disabled={todo.completed}
+     //  disabled={todo.completed}
     >
      ✏️
     </button>
