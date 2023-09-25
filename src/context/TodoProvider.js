@@ -31,13 +31,8 @@ export const TodoProvider = ({ children }) => {
    title: inputText,
    completed: false,
   };
-  if (newTodo.title !== "") {
-   console.log(newTodo.title);
-   setTodos([...todos, newTodo]);
-  }
+  setTodos([...todos, newTodo]);
   setInputText("");
-  console.log(todos);
-  console.log(todos[0].title);
  };
 
  const handleInputChange = (e) => {
