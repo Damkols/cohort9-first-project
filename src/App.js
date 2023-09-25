@@ -11,15 +11,15 @@ const App = () => {
     <div className="kanban-board">
      <div className="kanban-column">
       <h2>All Todos</h2>
-      <TodoList status="all" />
+      <TodoList todoStatus="all" />
      </div>
      <div className="kanban-column">
       <h2>Completed Todos</h2>
-      <TodoList status="completed" />
+      <TodoList todoStatus="completed" />
      </div>
      <div className="kanban-column">
-      <h2>Ongoing Todos</h2>
-      <TodoList status="ongoing" />
+      <h2>Uncompleted Todos</h2>
+      <TodoList todoStatus="uncompleted" />
      </div>
      <div className="kanban-column">
       <h2>Add New Todo</h2>

@@ -2,13 +2,13 @@ import React from "react";
 import { useTodoContext } from "../context/TodoProvider";
 import UpdateTodo from "./UpdateTodo";
 
-const TodoList = ({ status }) => {
+const TodoList = ({ todoStatus }) => {
  const { todos } = useTodoContext();
 
  const filteredTodos = todos.filter((todo) => {
-  if (status === "completed") {
+  if (todoStatus === "completed") {
    return todo.completed;
-  } else if (status === "ongoing") {
+  } else if (todoStatus === "uncompleted") {
    return !todo.completed;
   }
   return true;
